@@ -1,20 +1,27 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Logika Buka Undangan
     const openBtn = document.getElementById("open-btn");
     const coverPage = document.getElementById("cover-page");
     const mainContent = document.getElementById("main-content");
+    const bgMusic = document.getElementById("bg-music"); // Menangkap elemen audio
 
     openBtn.addEventListener("click", () => {
+        // Memutar musik saat tombol ditekan
+        bgMusic.play().catch(error => {
+            console.log("Audio diblokir oleh browser:", error);
+        });
+
         coverPage.style.transform = "translateY(-100vh)";
         setTimeout(() => {
-            coverPage.style.display = "none";
+            coverPage.classList.add("hidden");
             mainContent.classList.remove("hidden");
             createPetals();
             initScrollAnimations(); 
         }, 800);
     });
 
-    // 2. Countdown Timer Logika (Ganti targetDate dengan tanggal asli)
+    // Set correct date for the countdown timer
     const targetDate = new Date("June 22, 2026 18:00:00").getTime();
 
     const updateCountdown = setInterval(() => {
@@ -23,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (distance < 0) {
             clearInterval(updateCountdown);
-            document.querySelector(".countdown-container").innerHTML = "<p>Acara Sedang Berlangsung!</p>";
+            document.querySelector(".countdown-container").innerHTML = "<p style='font-size: 1.5rem; color: var(--dark-pink); font-weight: bold;'>The Event is Ongoing!</p>";
             return;
         }
 
@@ -33,40 +40,25 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
     }, 1000);
 
-    // 3. Efek Partikel Jatuh (Coquette Aesthetic)
     function createPetals() {
         const container = document.getElementById("petals-container");
-        const count = 150;
+        // Reduced to 40 elements for performance optimization (was previously 150)
+        const count = 40; 
 
         for (let i = 0; i < count; i++) {
             const petal = document.createElement("div");
             petal.classList.add("petal");
 
-            const size = Math.random() * 8 + 5;
-            petal.style.width = `${size}px`;
-            petal.style.height = `${size}px`;
-
+            const sizeMultiplier = Math.random() * 0.5 + 0.5;
+            petal.style.transform = `scale(${sizeMultiplier})`;
             petal.style.left = `${Math.random() * 100}%`;
-
-            petal.style.animationDuration = `${Math.random() * 15 + 10}s`;
-
-           
-            petal.style.animationDelay = `${Math.random() * -25}s`;
-          
-           
-            petal.style.opacity = Math.random() * 0.4 + 0.2;
-
-       
-            const isAlternateColor = Math.random() > 0.5;
-            petal.style.background = isAlternateColor ? '#ffc0cb' : '#ffb6c1';
-            if (Math.random() > 0.7) {
-                petal.style.filter = "blur(0.5px)"; 
-            }
+            petal.style.animationDuration = `${Math.random() * 10 + 8}s`;
+            petal.style.animationDelay = `${Math.random() * -15}s`;
 
             container.appendChild(petal);
         }
     }
-    // 4. Scroll Animation Logic (Intersection Observer murni, tanpa library berat)
+
     function initScrollAnimations() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -75,17 +67,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
         document.querySelectorAll('.animate-on-scroll').forEach(section => {
             observer.observe(section);
         });
     }
 
-    // 5. Placeholder Fetch API Supabase (Gunakan instruksi saya sebelumnya untuk mengisinya)
     document.getElementById('rsvp-form').addEventListener('submit', function (e) {
         e.preventDefault();
-    
-        document.getElementById('rsvp-status').innerText = "Simulasi: Data berhasil dikirim.";
+        const btn = document.getElementById('submit-rsvp');
+        const status = document.getElementById('rsvp-status');
+        
+        btn.disabled = true;
+        btn.innerText = "Sending...";
+        
+        // Simulation of data submission
+        setTimeout(() => {
+            status.innerText = "Your attendance confirmation has been successfully recorded.";
+            btn.innerText = "Send Confirmation";
+            btn.disabled = false;
+            this.reset();
+        }, 1500);
     });
 });

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Seventeen Invitation</title>
+    <title>Keisya's Sweet Seventeen</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
@@ -14,6 +14,9 @@
 <body>
     <section id="cover-page" class="cover-container">
         <div class="cover-content">
+            <div class="ribbon-knot-container">
+                <div class="ribbon-knot"></div>
+            </div>
             <h2 class="sub-title">You are invited to</h2>
             <h1 class="main-title">Keisya's Sweet Seventeen</h1>
             <button id="open-btn" class="coquette-btn">Open Invitation</button>
@@ -23,11 +26,10 @@
     <div id="petals-container"></div>
 
     <main id="main-content" class="hidden">
-        <div class="floating-petals" id="petals-container"></div>
-
         <section class="section hero-section" id="hero">
-            <h1 class="main-title">Keisya Aurellia</h1>
-            <h1 class="main-title">Monday, 22 June 2026</h1>
+            <h1 class="main-title">Keisya Aurellia's<br>Sweet Seventeen</h1>
+
+            <h2 class="sub-title">Monday, 22 June 2026</h2>
             <div class="countdown-container">
                 <div class="time-box"><span id="days">00</span>
                     <p>Days</p>
@@ -43,62 +45,64 @@
                 </div>
             </div>
         </section>
-        
-        <section class="section details-section animate-on-scroll" id="details">
-            <h2 class="section-title">Detail Acara</h2>
-            <div class="event-card">
-                <h3>Resepsi & Pesta</h3>
-                <p><strong>Pukul:</strong> 18:00 WIB</p>
-                <p><strong>Lokasi:</strong> Leviticus 11 Cafe</p>
-                <p>Jl. Penyelesaian Tomang II No.1, North Meruya, Kembangan, West Jakarta City, Jakarta
-                </p>
 
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5068465678896!2d106.72223057476363!3d-6.19665929379102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f72147b8a23f%3A0xf98d008933f7469f!2sLeviticus%2011!5e0!3m2!1sid!2sid!4v1773997483252!5m2!1sid!2sid"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" width="100%" height="250"
-                    style="border:0; border-radius: 10px; margin-top: 15px;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+        <section class="section details-section animate-on-scroll" id="details">
+            <h2 class="section-title">Event Details</h2>
+            <div class="event-card">
+                <h3>Reception & Party</h3>
+                <p><strong>Time:</strong> 18:00 WIB</p>
+                <p><strong>Location:</strong> Leviticus 11 Cafe</p>
+                <p>Jl. Penyelesaian Tomang II No.1, North Meruya, Kembangan, West Jakarta City, Jakarta</p>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Leviticus%2011%20Cafe,%20Jl.%20Penyelesaian%20Tomang%20II&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </section>
 
         <section class="section dresscode-section animate-on-scroll" id="dresscode">
-            <h2 class="section-title">Dresscode</h2>
+            <h2 class="section-title">Dress Code</h2>
             <div class="color-palette">
-                <div class="color-swatch" style="background-color: #FFFFFF; color: #5C4033;">White</div>
+                <div class="color-swatch" style="background-color: #FFFFFF; color: #6D5D62; border: 1px solid #D9CBB0;">
+                    White</div>
             </div>
-            <p class="dresscode-hint"></p>
         </section>
 
         <section class="section gallery-section animate-on-scroll" id="gallery">
             <h2 class="section-title">Gallery</h2>
             <div class="gallery-grid">
-                <div class="polaroid"><img src="PICTURES/WhatsApp Image 2026-03-20 at 16.22.58.jpeg" alt="Foto 1"></div>
-                <div class="polaroid"><img src="PICTURES/WhatsApp Image 2026-03-20 at 16.22.59.jpeg" alt="Foto 2"></div>
-                <div class="polaroid"><img src="PICTURES/WhatsApp Image 2026-03-20 at 16.23.32.jpeg" alt="Foto 3"></div>
+                <div class="polaroid"><img src="PICTURES/WhatsApp Image 2026-03-20 at 16.22.58.jpeg" alt="Keisya 1">
+                </div>
+                <div class="polaroid"><img src="PICTURES/WhatsApp Image 2026-03-20 at 16.22.59.jpeg" alt="Keisya 2">
+                </div>
+                <div class="polaroid"><img src="PICTURES/WhatsApp Image 2026-03-20 at 16.23.32.jpeg" alt="Keisya 3">
+                </div>
             </div>
         </section>
 
         <section class="section rsvp-section animate-on-scroll" id="rsvp">
-            <h2 class="section-title">RSVP</h2>
-            <form id="rsvp-form" class="coquette-form">
+            <h2 class="section-title">Attendance Confirmation (RSVP)</h2>
+            <form id="rsvp-form" class="coquette-form" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input type="text" id="nama" required>
+                    <label for="nama">Full Name</label>
+                    <input type="text" id="nama" required placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="kehadiran">Kehadiran</label>
+                    <label for="kehadiran">Attendance</label>
                     <select id="kehadiran" required>
-                        <option value="true">Hadir</option>
-                        <option value="false">Tidak Hadir</option>
+                        <option value="" disabled selected>Please select...</option>
+                        <option value="true">Attending</option>
+                        <option value="false">Not Attending</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="ucapan">Ucapan & Doa</label>
-                    <textarea id="ucapan" rows="4"></textarea>
+                    <label for="ucapan">Wishes & Messages</label>
+                    <textarea id="ucapan" rows="4" required placeholder=""></textarea>
                 </div>
-                <button type="submit" id="submit-rsvp" class="coquette-btn w-100">Kirim Konfirmasi</button>
+                <button type="submit" id="submit-rsvp" class="coquette-btn w-100">Send Confirmation</button>
                 <p id="rsvp-status"></p>
             </form>
 
@@ -106,6 +110,10 @@
             </div>
         </section>
     </main>
+
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="script.js"></script>
 </body>
