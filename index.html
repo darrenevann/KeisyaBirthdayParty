@@ -14,9 +14,15 @@
 <body>
     <section id="cover-page" class="cover-container">
         <div class="cover-content">
-            <div class="ribbon-knot-container">
-                <div class="ribbon-knot"></div>
+
+            <div class="coquette-bow-container">
+                <div class="bow-loop left bow-satin"></div>
+                <div class="bow-loop right bow-satin"></div>
+                <div class="bow-tail left bow-satin"></div>
+                <div class="bow-tail right bow-satin"></div>
+                <div class="bow-center"></div>
             </div>
+
             <h2 class="sub-title">You are invited to</h2>
             <h1 class="main-title">Keisya's Sweet Seventeen</h1>
             <button id="open-btn" class="coquette-btn">Open Invitation</button>
@@ -92,12 +98,12 @@
 
                 <div class="form-group">
                     <label for="nama">Full Name</label>
-                    <input type="text" id="nama" name="Name" required placeholder="Enter your full name">
+                    <input type="text" id="nama" name="Name" required placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="kehadiran">Attendance</label>
                     <select id="kehadiran" name="Attendance" required>
-                        <option value="" disabled selected>Please select...</option>
+                        <option value="" disabled selected></option>
                         <option value="Attending">Attending</option>
                         <option value="Not Attending">Not Attending</option>
                     </select>
@@ -105,7 +111,7 @@
                 <div class="form-group">
                     <label for="ucapan">Wishes & Messages</label>
                     <textarea id="ucapan" name="Message" rows="4" required
-                        placeholder="Write your message here..."></textarea>
+                        placeholder=""></textarea>
                 </div>
                 <button type="submit" id="submit-rsvp" class="coquette-btn w-100">Send Confirmation</button>
                 <p id="rsvp-status"></p>
