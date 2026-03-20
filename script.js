@@ -74,20 +74,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    document.getElementById('rsvp-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const btn = document.getElementById('submit-rsvp');
-        const status = document.getElementById('rsvp-status');
-        
-        btn.disabled = true;
-        btn.innerText = "Sending...";
-        
-        // Simulation of data submission
-        setTimeout(() => {
-            status.innerText = "Your attendance confirmation has been successfully recorded.";
-            btn.innerText = "Send Confirmation";
-            btn.disabled = false;
-            this.reset();
-        }, 1500);
-    });
 });

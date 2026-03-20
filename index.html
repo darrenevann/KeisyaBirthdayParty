@@ -85,22 +85,27 @@
 
         <section class="section rsvp-section animate-on-scroll" id="rsvp">
             <h2 class="section-title">Attendance Confirmation (RSVP)</h2>
-            <form id="rsvp-form" class="coquette-form" enctype="multipart/form-data">
+            <form id="rsvp-form" class="coquette-form" name="RSVP-Keisya" data-netlify="true">
+                <p class="hidden" style="display: none;">
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
                 <div class="form-group">
                     <label for="nama">Full Name</label>
-                    <input type="text" id="nama" required placeholder="">
+                    <input type="text" id="nama" name="Name" required placeholder="Enter your full name">
                 </div>
                 <div class="form-group">
                     <label for="kehadiran">Attendance</label>
-                    <select id="kehadiran" required>
+                    <select id="kehadiran" name="Attendance" required>
                         <option value="" disabled selected>Please select...</option>
-                        <option value="true">Attending</option>
-                        <option value="false">Not Attending</option>
+                        <option value="Attending">Attending</option>
+                        <option value="Not Attending">Not Attending</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="ucapan">Wishes & Messages</label>
-                    <textarea id="ucapan" rows="4" required placeholder=""></textarea>
+                    <textarea id="ucapan" name="Message" rows="4" required
+                        placeholder="Write your message here..."></textarea>
                 </div>
                 <button type="submit" id="submit-rsvp" class="coquette-btn w-100">Send Confirmation</button>
                 <p id="rsvp-status"></p>
