@@ -1,0 +1,436 @@
+:root {
+    --bg-color: #FFF0F5;
+    --primary-pink: #FFB6C1;
+    --dark-pink: #FF69B4;
+    --text-dark: #5C4033;
+    --text-light: #FFFFFF;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --font-script: 'Great Vibes', cursive;
+    --font-serif: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    font-family: var(--font-serif);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Typography & Utilities */
+.main-title {
+    font-family: var(--font-script);
+    font-size: 4rem;
+    color: var(--dark-pink);
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--dark-pink);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Buttons */
+.coquette-btn {
+    background-color: var(--primary-pink);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.coquette-btn:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-2px);
+}
+
+/* Layout Sections */
+.section {
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cover Page */
+.cover-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.cover-content {
+    background: #ffffff;
+    padding: 50px 40px;
+    border: 2px dashed var(--primary-pink);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+}
+
+/* Countdown */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.time-box {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 80px;
+    text-align: center;
+    border: 1px solid var(--primary-pink);
+}
+
+.time-box span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark-pink);
+}
+
+/* Event Details */
+.event-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #fff;
+}
+
+/* Dresscode */
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.color-swatch {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dresscode-hint {
+    text-align: center;
+    font-style: italic;
+}
+
+.gallery-grid {
+    display: grid;
+    /* Memaksa tepat 3 kolom dengan ukuran yang sama (1fr) */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px;
+    padding-bottom: 40px;
+    /* Ruang putih khas polaroid di bawah */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease;
+}
+
+.polaroid:hover {
+    transform: translateY(-5px);
+}
+
+.polaroid img {
+    width: 100%;
+    /* Gunakan aspect-ratio untuk memastikan kotak foto identik 
+       tanpa peduli ukuran asli filenya */
+    aspect-ratio: 4 / 5;
+
+    /* Mencegah gambar gepeng/distorsi */
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Responsivitas: Jika dibuka di HP, jadikan 1 kolom agar tidak terlalu sempit */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form & RSVP */
+.coquette-form {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--primary-pink);
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--dark-pink);
+}
+
+/* Guestbook */
+.guestbook {
+    margin-top: 40px;
+}
+
+.messages-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.message-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-pink);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#petals-container {
+    position: fixed; /* Memastikan partikel ada di seluruh layar saat scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100; /* Pastikan di atas konten utama */
+}
+
+.petal {
+    position: absolute;
+    top: -10%;
+    /* 1. Rasio Bentuk Pita (Panjang & Tipis) */
+    width: 25px; 
+    height: 5px;
+    
+    /* 2. Warna & Kedalaman Pita (Satin/Sutra) */
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,192,203,1) 60%, rgba(255,182,193,1) 100%);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    
+    /* 3. Animasi Khusus Pita (Ganti Namanya) */
+    animation-name: ribbonFallAndTumble; 
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Gerakan lebih dramatis */
+    animation-iteration-count: infinite;
+}
+
+/* 4. Gerakan Meliuk 3D Pita */
+@keyframes ribbonFallAndTumble {
+    0% {
+        top: -15%;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0) scaleY(1);
+        opacity: 0;
+    }
+    10% { opacity: 0.9; }
+    
+    50% {
+        top: 50%;
+        transform: rotateX(180deg) rotateY(45deg) rotateZ(180deg) translateX(80px) scaleY(0.7);
+        opacity: 0.9;
+    }
+    
+    90% { opacity: 0.9; }
+    
+    100% {
+        top: 110%; 
+        transform: rotateX(360deg) rotateY(-45deg) rotateZ(360deg) translateX(-50px) scaleY(1);
+        opacity: 0;
+    }
+}
+
+.ribbon-knot-container {
+    position: relative;
+    width: 200px; 
+    height: 150px;
+    margin: 30px auto; 
+}
+
+.ribbon-knot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    -webkit-clip-path: polygon(
+        /* Loop KiriAtas */ 0% 10%, 15% 0%, 50% 10%, 50% 40%, 15% 50%, 0% 40%,
+        /* Simpul Tengah */ 45% 45%, 55% 45%,
+        /* Loop KananAtas */ 85% 50%, 100% 40%, 100% 10%, 85% 0%, 50% 10%, 50% 40%,
+        /* Ekor Kanan */ 50% 50%, 65% 100%, 85% 85%, 100% 100%, 100% 60%, 85% 50%,
+        /* Simpul Tengah */ 55% 55%, 45% 55%,
+        /* Ekor Kiri */ 15% 50%, 0% 60%, 0% 100%, 15% 85%, 35% 100%, 50% 50%
+    );
+    clip-path: polygon(
+        /* Loop KiriAtas */ 0% 10%, 15% 0%, 50% 10%, 50% 40%, 15% 50%, 0% 40%,
+        /* Simpul Tengah */ 45% 45%, 55% 45%,
+        /* Loop KananAtas */ 85% 50%, 100% 40%, 100% 10%, 85% 0%, 50% 10%, 50% 40%,
+        /* Ekor Kanan */ 50% 50%, 65% 100%, 85% 85%, 100% 100%, 100% 60%, 85% 50%,
+        /* Simpul Tengah */ 55% 55%, 45% 55%,
+        /* Ekor Kiri */ 15% 50%, 0% 60%, 0% 100%, 15% 85%, 35% 100%, 50% 50%
+    );
+
+    /* 2. WARNA PINK COQUETTE SATIN DENGAN GRADASI HALUS */
+    background: linear-gradient(to right, 
+        #f8d7da 0%, 
+        #fbeeea 20%, 
+        #f8d7da 50%, 
+        #f5c2c7 100% 
+    );
+
+    box-shadow: 0 4px 8px rgba(248, 215, 218, 0.2); 
+}
+
+/* --- RESPONSIVITAS MOBILE --- */
+@media screen and (max-width: 768px) {
+
+    .main-title {
+        font-size: 2.8rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .sub-title {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 50px 15px;
+    }
+
+    .cover-content {
+        width: 90%;
+        padding: 40px 20px;
+    }
+
+    .countdown-container {
+        gap: 10px;
+    }
+
+    .time-box {
+        min-width: 65px;
+        padding: 10px;
+    }
+
+    .time-box span {
+        font-size: 1.5rem;
+    }
+
+    .time-box p {
+        font-size: 0.8rem;
+    }
+
+    .coquette-form,
+    .event-card {
+        padding: 20px;
+    }
+
+    .color-swatch {
+        width: 80px;
+        height: 80px;
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .countdown-container {
+        flex-wrap: wrap;
+    }
+
+    .time-box {
+        min-width: 45%;
+    
+    }
+}
